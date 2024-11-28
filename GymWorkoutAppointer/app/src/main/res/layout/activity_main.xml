@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/imgLogo"
+            android:layout_width="250dp"
+            android:layout_height="250dp"
+            android:layout_marginBottom="150dp"
+            android:cropToPadding="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.19999999"
+            app:srcCompat="@drawable/logo" />
+
+        <Button
+            android:id="@+id/btnVer"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#817F7F"
+            android:text="Entrenamientos anteriores"
+            app:layout_constraintEnd_toEndOf="@+id/btnCrear"
+            app:layout_constraintStart_toStartOf="@+id/btnCrear"
+            app:layout_constraintTop_toBottomOf="@+id/btnCrear" />
+
+        <Button
+            android:id="@+id/btnCrear"
+            android:layout_width="220dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#817F7F"
+            android:text="Crear Entrenamiento"
+            app:layout_constraintEnd_toEndOf="@+id/imgLogo"
+            app:layout_constraintStart_toStartOf="@+id/imgLogo"
+            app:layout_constraintTop_toBottomOf="@+id/imgLogo" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
