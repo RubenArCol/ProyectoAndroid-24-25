@@ -45,6 +45,7 @@ class MainActivity : AppCompatActivity() {
             startActivity(intento)
         }
 
+        // Doble pulsación
         onBackPressedDispatcher.addCallback(this, object : OnBackPressedCallback(true){
             override fun handleOnBackPressed() {
                 if (doblePulsacion){

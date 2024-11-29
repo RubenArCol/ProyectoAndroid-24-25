@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
@@ -7,4 +7,94 @@
     android:layout_height="match_parent"
     tools:context=".Registrar">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/lblDias"
+            android:layout_width="match_parent"
+            android:layout_height="24dp"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="0dp"
+            android:text="Dias:" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="24dp" />
+
+        <TextView
+            android:id="@+id/lblCuerpo"
+            android:layout_width="match_parent"
+            android:layout_height="24dp"
+            android:layout_marginTop="0dp"
+            android:text="Objetivo:" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="24dp" />
+
+        <TextView
+            android:id="@+id/lblEjercicio"
+            android:layout_width="match_parent"
+            android:layout_height="24dp"
+            android:layout_marginTop="0dp"
+            android:text="Ejercicio:" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="24dp" />
+
+        <TextView
+            android:id="@+id/lblLista"
+            android:layout_width="match_parent"
+            android:layout_height="24dp"
+            android:layout_marginTop="0dp"
+            android:text="Ejercicios Agregados:" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <Spinner
+            android:id="@+id/spnDias"
+            android:layout_width="match_parent"
+            android:layout_height="24dp" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="24dp" />
+
+        <Spinner
+            android:id="@+id/spnCuerpo"
+            android:layout_width="match_parent"
+            android:layout_height="24dp" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="24dp" />
+
+        <Spinner
+            android:id="@+id/spnEjercicios"
+            android:layout_width="match_parent"
+            android:layout_height="24dp"
+            android:layout_marginTop="0dp" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="24dp" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rcvLista"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </LinearLayout>
+
+</LinearLayout>
