@@ -15,6 +15,25 @@ class Registrar : AppCompatActivity() {
         ActivityRegistrarBinding.inflate(layoutInflater)
     }
 
+    val ejerciciosPorPartes = mapOf(
+        "Pecho" to listOf("Press banca", "Aperturas", "Press superior (Barra)", "Press superior (Mancuernas)"),
+        "Espalda" to listOf("Jalón con mancuernas", "Jalón al pecho", "Remo", "Pullover"),
+        "Piernas" to listOf("Sentadillas", "Peso muerto", "Zancadas"),
+        "Hombros" to listOf("Press militar", "Elevaciones laterales", "Pájaros"),
+        "Brazos" to listOf("Curl de bíceps", "Extensión de tríceps", "Martillo"),
+        "Abdominales" to listOf("Crunch", "Plancha", "Elevaciones de piernas")
+    )
+
+    val ejerciciosPorDia = mutableMapOf(
+        "Lunes" to mutableListOf<String>(),
+        "Martes" to mutableListOf(),
+        "Miércoles" to mutableListOf(),
+        "Jueves" to mutableListOf(),
+        "Viernes" to mutableListOf(),
+        "Sábado" to mutableListOf(),
+        "Domingo" to mutableListOf()
+    )
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -24,15 +43,6 @@ class Registrar : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-
-        val ejerciciosPorPartes = mapOf(
-            "Pecho" to listOf("Press banca", "Aperturas", "Press superior (Barra)", "Press superior (Mancuernas)"),
-            "Espalda" to listOf("Jalón con mancuernas", "Jalón al pecho", "Remo", "Pullover"),
-            "Piernas" to listOf("Sentadillas", "Peso muerto", "Zancadas"),
-            "Hombros" to listOf("Press militar", "Elevaciones laterales", "Pájaros"),
-            "Brazos" to listOf("Curl de bíceps", "Extensión de tríceps", "Martillo"),
-            "Abdominales" to listOf("Crunch", "Plancha", "Elevaciones de piernas")
-        )
 
         // meto los keys en el spinner
         val adapter = ArrayAdapter(
