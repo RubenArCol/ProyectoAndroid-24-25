@@ -77,16 +77,18 @@
         app:layout_constraintStart_toStartOf="@+id/spnCuerpo"
         app:layout_constraintTop_toTopOf="@+id/lblEjercicio" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rcvLista"
-        android:layout_width="0dp"
+    <ListView
+        android:id="@+id/listDias"
+        android:layout_width="wrap_content"
         android:layout_height="0dp"
-        android:layout_marginTop="25dp"
-        android:layout_marginBottom="25dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="15dp"
         app:layout_constraintBottom_toTopOf="@+id/btnRegistra"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lblLista" />
+        app:layout_constraintTop_toBottomOf="@+id/lblLista"
+        app:layout_constraintVertical_bias="0.195" />
 
     <Button
         android:id="@+id/btnRegistra"
