@@ -33,8 +33,9 @@
             android:id="@+id/btnVer"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
             android:backgroundTint="#817F7F"
-            android:text="Entrenamientos anteriores"
+            android:text="Salud"
             app:layout_constraintEnd_toEndOf="@+id/btnCrear"
             app:layout_constraintStart_toStartOf="@+id/btnCrear"
             app:layout_constraintTop_toBottomOf="@+id/btnCrear" />

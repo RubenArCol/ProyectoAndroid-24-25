@@ -1,5 +1,7 @@
 package com.example.gymworkoutappointer
 
+import android.app.AlertDialog
+import android.content.DialogInterface
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -154,8 +156,21 @@ class Registrar : AppCompatActivity() {
 
     // funcion de limpiar la listView
     private fun limpiaLista() {
-        ejerciciosPorDia.forEach { it.ejercicios.clear() }
-        listViewAdapter.notifyDataSetChanged() // Notificar al adaptador que los datos han cambiado
-        Toast.makeText(this, "Lista de ejercicios limpiada", Toast.LENGTH_SHORT).show()
+        // dialogo modal
+        val builder = AlertDialog.Builder(this)
+        builder.setTitle("Confirmar")
+        builder.setMessage("¿Estás seguro de que deseas limpiar la lista de ejercicios?")
+
+        builder.setPositiveButton("Sí") { dialog: DialogInterface, which: Int ->
+            // Limpiar la lista de ejercicios
+            ejerciciosPorDia.forEach { it.ejercicios.clear() }
+            Toast.makeText(this, "Lista de ejercicios limpiada", Toast.LENGTH_SHORT).show()
+        }
+
+        builder.setNegativeButton("No") { dialog: DialogInterface, which: Int ->
+            dialog.dismiss()
+        }
+
+        builder.show()
     }
 }
