@@ -65,6 +65,9 @@ class Registrar : AppCompatActivity() {
         setupSpinners()
         setupListView()
 
+        //al principio la lista es invisible
+        enlaceRegistro.listDias.visibility = View.GONE
+
         // Agregar ejercicio seleccionado al día
         enlaceRegistro.btnRegistra.setOnClickListener {
             val parteSeleccionada = enlaceRegistro.spnCuerpo.selectedItem?.toString()
@@ -76,6 +79,10 @@ class Registrar : AppCompatActivity() {
                 val dia = ejerciciosPorDia.find { it.nombre == diaSeleccionado }
                 dia?.ejercicios?.add("$parteSeleccionada: $ejercicioSeleccionado")
                 listViewAdapter.notifyDataSetChanged() // Notificar al adaptador que los datos han cambiado
+
+                //actualizao visiblilidad
+                actualizarVisibilidadListView()
+
                 Toast.makeText(this, "Ejercicio agregado al $diaSeleccionado", Toast.LENGTH_SHORT).show()
             } else {
                 Toast.makeText(this, "Selecciona una parte, ejercicio y día", Toast.LENGTH_SHORT).show()
@@ -164,6 +171,11 @@ class Registrar : AppCompatActivity() {
         builder.setPositiveButton("Sí") { dialog: DialogInterface, which: Int ->
             // Limpiar la lista de ejercicios
             ejerciciosPorDia.forEach { it.ejercicios.clear() }
+            listViewAdapter.notifyDataSetChanged() // Notificar al adaptador que los datos han cambiado
+
+            // Actualizar la visibilidad del ListView
+            actualizarVisibilidadListView()
+
             Toast.makeText(this, "Lista de ejercicios limpiada", Toast.LENGTH_SHORT).show()
         }
 
@@ -172,5 +184,12 @@ class Registrar : AppCompatActivity() {
         }
 
         builder.show()
+    }
+
+    // lista invisible si no tiene nada
+    private fun actualizarVisibilidadListView() {
+        val listView: ListView = enlaceRegistro.listDias
+        // si tiene algo se vé y si no la oculto
+        listView.visibility = if (ejerciciosPorDia.any { it.ejercicios.isNotEmpty() }) View.VISIBLE else View.GONE
     }
 }
