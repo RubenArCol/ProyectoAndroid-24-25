@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
@@ -7,95 +7,108 @@
     android:layout_height="match_parent"
     tools:context=".Registrar">
 
-    <LinearLayout
+
+    <TextView
+        android:id="@+id/lblDias"
+        android:layout_width="150dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="25dp"
+        android:text="Dias:"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/lblCuerpo"
+        android:layout_width="150dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="25dp"
+        android:text="Objetivo:"
+        app:layout_constraintEnd_toEndOf="@+id/lblDias"
+        app:layout_constraintStart_toStartOf="@+id/lblDias"
+        app:layout_constraintTop_toBottomOf="@+id/lblDias" />
+
+    <TextView
+        android:id="@+id/lblEjercicio"
+        android:layout_width="150dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="25dp"
+        android:text="Ejercicio:"
+        app:layout_constraintEnd_toEndOf="@+id/lblCuerpo"
+        app:layout_constraintStart_toStartOf="@+id/lblCuerpo"
+        app:layout_constraintTop_toBottomOf="@+id/lblCuerpo" />
+
+    <TextView
+        android:id="@+id/lblLista"
+        android:layout_width="150dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="25dp"
+        android:text="Ejercicios Agregados:"
+        app:layout_constraintEnd_toEndOf="@+id/lblEjercicio"
+        app:layout_constraintStart_toStartOf="@+id/lblEjercicio"
+        app:layout_constraintTop_toBottomOf="@+id/lblEjercicio" />
+
+    <Spinner
+        android:id="@+id/spnDias"
+        android:layout_width="150dp"
+        android:layout_height="30dp"
+        android:layout_marginEnd="15dp"
+        android:spinnerMode="dropdown"
+        app:layout_constraintBottom_toBottomOf="@+id/lblDias"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/lblDias" />
+
+
+    <Spinner
+        android:id="@+id/spnCuerpo"
+        android:layout_width="150dp"
+        android:layout_height="30dp"
+        app:layout_constraintBottom_toBottomOf="@+id/lblCuerpo"
+        app:layout_constraintEnd_toEndOf="@+id/spnDias"
+        app:layout_constraintStart_toStartOf="@+id/spnDias"
+        app:layout_constraintTop_toTopOf="@+id/lblCuerpo" />
+
+    <Spinner
+        android:id="@+id/spnEjercicios"
+        android:layout_width="150dp"
+        android:layout_height="30dp"
+        app:layout_constraintBottom_toBottomOf="@+id/lblEjercicio"
+        app:layout_constraintEnd_toEndOf="@+id/spnCuerpo"
+        app:layout_constraintStart_toStartOf="@+id/spnCuerpo"
+        app:layout_constraintTop_toTopOf="@+id/lblEjercicio" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rcvLista"
         android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:orientation="vertical">
+        android:layout_height="0dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginBottom="25dp"
+        app:layout_constraintBottom_toTopOf="@+id/btnRegistra"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lblLista" />
 
-        <TextView
-            android:id="@+id/lblDias"
-            android:layout_width="match_parent"
-            android:layout_height="24dp"
-            android:layout_marginStart="0dp"
-            android:layout_marginTop="0dp"
-            android:text="Dias:" />
+    <Button
+        android:id="@+id/btnRegistra"
+        android:layout_width="120dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginBottom="12dp"
+        android:backgroundTint="#817F7F"
+        android:text="Registra"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="24dp" />
+    <Button
+        android:id="@+id/btnLimpia"
+        android:layout_width="120dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="56dp"
+        android:backgroundTint="#817F7F"
+        android:text="Clear"
+        app:layout_constraintBottom_toBottomOf="@+id/btnRegistra"
+        app:layout_constraintStart_toEndOf="@+id/btnRegistra"
+        app:layout_constraintTop_toTopOf="@+id/btnRegistra"
+        app:layout_constraintVertical_bias="1.0" />
 
-        <TextView
-            android:id="@+id/lblCuerpo"
-            android:layout_width="match_parent"
-            android:layout_height="24dp"
-            android:layout_marginTop="0dp"
-            android:text="Objetivo:" />
-
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="24dp" />
-
-        <TextView
-            android:id="@+id/lblEjercicio"
-            android:layout_width="match_parent"
-            android:layout_height="24dp"
-            android:layout_marginTop="0dp"
-            android:text="Ejercicio:" />
-
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="24dp" />
-
-        <TextView
-            android:id="@+id/lblLista"
-            android:layout_width="match_parent"
-            android:layout_height="24dp"
-            android:layout_marginTop="0dp"
-            android:text="Ejercicios Agregados:" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:orientation="vertical">
-
-        <Spinner
-            android:id="@+id/spnDias"
-            android:layout_width="match_parent"
-            android:layout_height="24dp"
-            android:spinnerMode="dropdown" />
-
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="24dp" />
-
-        <Spinner
-            android:id="@+id/spnCuerpo"
-            android:layout_width="match_parent"
-            android:layout_height="24dp" />
-
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="24dp" />
-
-        <Spinner
-            android:id="@+id/spnEjercicios"
-            android:layout_width="match_parent"
-            android:layout_height="24dp"
-            android:layout_marginTop="0dp" />
-
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="24dp" />
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rcvLista"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-
-    </LinearLayout>
-
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
