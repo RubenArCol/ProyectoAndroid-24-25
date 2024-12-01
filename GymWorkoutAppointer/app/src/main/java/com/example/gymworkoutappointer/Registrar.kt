@@ -17,6 +17,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.core.view.isEmpty
 import com.example.gymworkoutappointer.databinding.ActivityRegistrarBinding
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
@@ -77,12 +78,13 @@ class Registrar : AppCompatActivity() {
 
         // arranco los spinners, la listview, la barra de progresos y los datos que estuvieran guardados
         progreso = enlaceRegistro.pbDias
+        cargarDatosJson()
         setupSpinners()
         setupListView()
-        cargarDatosJson()
 
-        //al principio la lista es invisible
-        enlaceRegistro.listDias.visibility = View.GONE
+
+        actualizarVisibilidadListView()
+
 
         // Agregar ejercicio seleccionado al día
         enlaceRegistro.btnRegistra.setOnClickListener {
@@ -201,6 +203,11 @@ class Registrar : AppCompatActivity() {
             // Limpiar la lista de ejercicios
             ejerciciosPorDia.forEach { it.ejercicios.clear() }
             listViewAdapter.notifyDataSetChanged() // Notificar al adaptador que los datos han cambiado
+
+            // limpio el json
+            val editor = preferencias.edit()
+            editor.remove("ejercicios_por_dia")
+            editor.apply()
 
             // Actualizar la visibilidad del ListView
             actualizarVisibilidadListView()
