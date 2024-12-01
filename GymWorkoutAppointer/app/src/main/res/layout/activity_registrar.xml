@@ -14,7 +14,7 @@
         android:layout_height="30dp"
         android:layout_marginStart="15dp"
         android:layout_marginTop="25dp"
-        android:text="Dias:"
+        android:text="@string/dias"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -23,7 +23,7 @@
         android:layout_width="150dp"
         android:layout_height="30dp"
         android:layout_marginTop="25dp"
-        android:text="Objetivo:"
+        android:text="@string/objetivo"
         app:layout_constraintEnd_toEndOf="@+id/lblDias"
         app:layout_constraintStart_toStartOf="@+id/lblDias"
         app:layout_constraintTop_toBottomOf="@+id/lblDias" />
@@ -33,7 +33,7 @@
         android:layout_width="150dp"
         android:layout_height="30dp"
         android:layout_marginTop="25dp"
-        android:text="Ejercicio:"
+        android:text="@string/ejercicio"
         app:layout_constraintEnd_toEndOf="@+id/lblCuerpo"
         app:layout_constraintStart_toStartOf="@+id/lblCuerpo"
         app:layout_constraintTop_toBottomOf="@+id/lblCuerpo" />
@@ -43,7 +43,7 @@
         android:layout_width="150dp"
         android:layout_height="30dp"
         android:layout_marginTop="25dp"
-        android:text="Ejercicios Agregados:"
+        android:text="@string/ejercicios_add"
         app:layout_constraintEnd_toEndOf="@+id/lblEjercicio"
         app:layout_constraintStart_toStartOf="@+id/lblEjercicio"
         app:layout_constraintTop_toBottomOf="@+id/lblEjercicio" />
@@ -110,7 +110,7 @@
         android:layout_marginStart="60dp"
         android:layout_marginBottom="12dp"
         android:backgroundTint="#817F7F"
-        android:text="Registra"
+        android:text="@string/register"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -120,7 +120,7 @@
         android:layout_height="50dp"
         android:layout_marginStart="56dp"
         android:backgroundTint="#817F7F"
-        android:text="Clear"
+        android:text="@string/limpiar"
         app:layout_constraintBottom_toBottomOf="@+id/btnRegistra"
         app:layout_constraintStart_toEndOf="@+id/btnRegistra"
         app:layout_constraintTop_toTopOf="@+id/btnRegistra"
