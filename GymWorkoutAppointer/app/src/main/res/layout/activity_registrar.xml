@@ -82,13 +82,26 @@
         android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:layout_marginTop="15dp"
-        android:layout_marginBottom="15dp"
+        android:layout_marginBottom="50dp"
         app:layout_constraintBottom_toTopOf="@+id/btnRegistra"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/lblLista"
-        app:layout_constraintVertical_bias="0.195" />
+        app:layout_constraintVertical_bias="0.195">
+
+    </ListView>
+
+    <ProgressBar
+        android:id="@+id/pbDias"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:max="7"
+        app:layout_constraintBottom_toTopOf="@+id/btnRegistra"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/listDias" />
 
     <Button
         android:id="@+id/btnRegistra"

@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">GymWorkoutAppointer</string>
+    <string name="dias">Dias:</string>
+    <string name="objetivo">Objetivo:</string>
+    <string name="ejercicio">Ejercicios:</string>
+    <string name="ejercicios_add">Ejercicios agregados:</string>
+    <string name="register">Registrar</string>
+    <string name="limpiar">Limpiar</string>
+    <string name="imc">Calcule su IMC:</string>
+    <string name="altura">¿Como quiere indicar la altura?</string>
+    <string name="peso">Peso (Kg)</string>
+    <string name="calcIMC">Calcular su IMC</string>
+    <string name="entrenamiento">Crear entrenamiento</string>
+    <string name="salud">Salud</string>
 </resources>

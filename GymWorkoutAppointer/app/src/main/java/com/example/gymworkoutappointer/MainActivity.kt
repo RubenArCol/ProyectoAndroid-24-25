@@ -2,6 +2,7 @@ package com.example.gymworkoutappointer
 
 import android.content.Intent
 import android.os.Bundle
+import android.widget.ProgressBar
 import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
 import androidx.activity.enableEdgeToEdge
@@ -14,6 +15,8 @@ import com.example.gymworkoutappointer.databinding.ActivityMainBinding
 class MainActivity : AppCompatActivity() {
 
     var doblePulsacion = false
+
+
 
     val enlace:ActivityMainBinding by lazy{
         ActivityMainBinding.inflate(layoutInflater)

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">GymWorkoutAppointer</string>
+    <string name="dias">Days:</string>
+    <string name="objetivo">Objective:</string>
+    <string name="ejercicio">Exercises:</string>
+    <string name="ejercicios_add">Added exercises:</string>
+    <string name="register">Register</string>
+    <string name="limpiar">Clear</string>
+    <string name="imc">Calculate your IMC:</string>
+    <string name="altura">How will you put your height?</string>
+    <string name="peso">Weight (Kg)</string>
+    <string name="calcIMC">Calculate your IMC</string>
+    <string name="entrenamiento">Create training</string>
+    <string name="salud">Health</string>
+</resources>
