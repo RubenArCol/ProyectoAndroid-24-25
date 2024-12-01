@@ -177,6 +177,7 @@ class Registrar : AppCompatActivity() {
                 return position.toLong()
             }
 
+            // esto en concreto no tengo ni idea de como cambiarlo
             override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
                 val view = LayoutInflater.from(parent?.context)
                     .inflate(android.R.layout.simple_list_item_1, parent, false)
