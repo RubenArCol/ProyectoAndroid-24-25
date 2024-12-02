@@ -2,6 +2,7 @@ package com.example.gymworkoutappointer
 
 import android.app.AlertDialog
 import android.content.DialogInterface
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -30,6 +31,8 @@ data class DiaConEjercicios(
 private lateinit var progreso: ProgressBar
 
 class Registrar : AppCompatActivity() {
+
+    private var intentBool:Boolean = false
 
     private val enlaceRegistro: ActivityRegistrarBinding by lazy {
         ActivityRegistrarBinding.inflate(layoutInflater)
@@ -103,6 +106,9 @@ class Registrar : AppCompatActivity() {
                 actualizarProgressBar()
                 guardarDatosJson()
 
+                // Crear evento en el calendario
+                crearEventoCalendario(diaSeleccionado)
+
                 Toast.makeText(this, "Ejercicio agregado al $diaSeleccionado", Toast.LENGTH_SHORT)
                     .show()
             } else {
@@ -114,6 +120,34 @@ class Registrar : AppCompatActivity() {
         enlaceRegistro.btnLimpia.setOnClickListener {
             limpiaLista()
         }
+    }
+
+    private fun crearEventoCalendario(diaSeleccionado: String) {
+        val inicio = System.currentTimeMillis() //fecha actual
+        val fin = inicio + 60 * 60 * 1000 // 1 hora después
+
+        if (!intentBool){
+            // Crear Intent para insertar el evento
+            val intent = Intent(Intent.ACTION_INSERT).apply {
+                data = android.provider.CalendarContract.Events.CONTENT_URI
+                putExtra(android.provider.CalendarContract.Events.TITLE, "Ejercicio: Hoy empieza el cambio")
+                putExtra(android.provider.CalendarContract.Events.DESCRIPTION, "Planificado para el día $diaSeleccionado")
+                putExtra(android.provider.CalendarContract.Events.EVENT_LOCATION, "Tu gimnasio")
+                putExtra(android.provider.CalendarContract.EXTRA_EVENT_BEGIN_TIME, inicio)
+                putExtra(android.provider.CalendarContract.EXTRA_EVENT_END_TIME, fin)
+            }
+
+            // Verificar si hay una aplicación de calendario que pueda manejar el Intent
+            if (intent.resolveActivity(packageManager) != null) {
+                startActivity(intent)
+            } else {
+                Toast.makeText(this, "No hay una aplicación de calendario disponible.", Toast.LENGTH_SHORT).show()
+            }
+        } else {
+            Toast.makeText(this, "ya se ha registrado un evento", Toast.LENGTH_SHORT).show()
+        }
+
+        intentBool=true // solo permito una vez el evento
     }
 
     private fun setupSpinners() {
